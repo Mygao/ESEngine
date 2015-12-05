@@ -6,7 +6,7 @@
 
 namespace base {
 
-class TaskQueue : std::queue<std::function<void(void)>>
+class TaskQueue : public std::queue<std::function<void(void)>>
 {
 public:
 	void Swap(TaskQueue* queue) { c.swap(queue->c); }

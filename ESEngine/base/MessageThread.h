@@ -20,7 +20,7 @@ public:
 	ThreadHandle GetHandle() { return m_poHandle; }
 
 private:
-	virtual void ThreadMain();
+	virtual void ThreadMain() override;
 
 	ThreadHandle m_poHandle;
 	MessageLoop* m_poMessageLoop;
