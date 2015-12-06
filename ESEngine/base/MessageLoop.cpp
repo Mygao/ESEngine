@@ -24,7 +24,14 @@ void MessageLoop::Run()
 		{
 			//Reload Queue
 		}
-		
+
+		if (!m_oWorkQueue.empty())
+		{
+			std::function<void(void)> task = m_oWorkQueue.front();
+			task();
+		}
+
+
 		if (m_bQuit)
 		{
 			break;
@@ -44,6 +51,7 @@ void MessageLoop::Quit()
 
 void MessageLoop::PostTask(std::function<void(void)>& task)
 {
+	m_oWorkQueue.push(task);
 	m_poIncomingTaskSemaphore->Signal();
 }
 

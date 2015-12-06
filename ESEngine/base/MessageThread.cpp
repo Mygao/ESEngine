@@ -21,16 +21,19 @@ bool MessageThread::Start()
 
 void MessageThread::Stop()
 {
-	m_poMessageLoop->Quit();
-
-	std::function<void(void)> a = std::bind(&MessageThread::Stop, this);
-	m_poMessageLoop->PostTask(a);
+	std::function<void(void)> task = std::bind(&MessageThread::QuitMessageLoop, this);
+	m_poMessageLoop->PostTask(task);
 	Thread::Join(m_poHandle);
 }
 
 void MessageThread::ThreadMain()
 {
 	m_poMessageLoop->Run();
+}
+
+void MessageThread::QuitMessageLoop()
+{
+	m_poMessageLoop->Quit();
 }
 
 } //namespace base

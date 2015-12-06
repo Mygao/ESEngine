@@ -21,6 +21,7 @@ public:
 
 private:
 	virtual void ThreadMain() override;
+	void QuitMessageLoop();
 
 	ThreadHandle m_poHandle;
 	MessageLoop* m_poMessageLoop;
