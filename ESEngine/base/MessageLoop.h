@@ -1,6 +1,8 @@
 #ifndef BASE_MESSAGELOOP_H_
 #define BASE_MESSAGELOOP_H_
 
+#include <functional>
+
 #include "TaskQueue.h"
 #include "Semaphore.h"
 
@@ -14,6 +16,8 @@ public:
 
 	void Run();
 	void Quit();
+
+	void PostTask(std::function<void(void)>& task);
 
 private:
 	bool m_bQuit;

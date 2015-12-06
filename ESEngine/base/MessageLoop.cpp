@@ -42,4 +42,9 @@ void MessageLoop::Quit()
 	m_bQuit = true;
 }
 
+void MessageLoop::PostTask(std::function<void(void)>& task)
+{
+	m_poIncomingTaskSemaphore->Signal();
+}
+
 } //namespace base

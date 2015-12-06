@@ -30,6 +30,9 @@
     <ClCompile Include="base\MessageLoop.cpp">
       <Filter>소스 파일\base</Filter>
     </ClCompile>
+    <ClCompile Include="base\Semaphore.cpp">
+      <Filter>소스 파일\base</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\Thread.h">
@@ -45,6 +48,9 @@
       <Filter>소스 파일\base</Filter>
     </ClInclude>
     <ClInclude Include="base\TaskQueue.h">
+      <Filter>소스 파일\base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\Semaphore.h">
       <Filter>소스 파일\base</Filter>
     </ClInclude>
   </ItemGroup>

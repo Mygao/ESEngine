@@ -121,6 +121,7 @@
   <ItemGroup>
     <ClCompile Include="base\MessageLoop.cpp" />
     <ClCompile Include="base\MessageThread.cpp" />
+    <ClCompile Include="base\Semaphore.cpp" />
     <ClCompile Include="base\Thread.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -128,6 +129,7 @@
     <ClInclude Include="base\macros.h" />
     <ClInclude Include="base\MessageLoop.h" />
     <ClInclude Include="base\MessageThread.h" />
+    <ClInclude Include="base\Semaphore.h" />
     <ClInclude Include="base\TaskQueue.h" />
     <ClInclude Include="base\Thread.h" />
   </ItemGroup>

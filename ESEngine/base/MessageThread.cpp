@@ -22,6 +22,9 @@ bool MessageThread::Start()
 void MessageThread::Stop()
 {
 	m_poMessageLoop->Quit();
+
+	std::function<void(void)> a = std::bind(&MessageThread::Stop, this);
+	m_poMessageLoop->PostTask(a);
 	Thread::Join(m_poHandle);
 }
 
