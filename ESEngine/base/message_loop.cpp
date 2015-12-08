@@ -25,9 +25,10 @@ void MessageLoop::Run()
 			//Reload Queue
 		}
 
-		if (!work_queue_.empty())
+		while (!work_queue_.empty())
 		{
 			std::function<void(void)> task = work_queue_.front();
+			work_queue_.pop();
 			task();
 		}
 
