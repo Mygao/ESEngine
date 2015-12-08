@@ -3,8 +3,8 @@
 
 #include <string>
 
-#include "Thread.h"
-#include "MessageLoop.h"
+#include "thread.h"
+#include "message_loop.h"
 
 namespace base {
 
@@ -17,16 +17,16 @@ public:
 	bool Start();
 	void Stop();
 
-	ThreadHandle GetHandle() { return m_poHandle; }
+	ThreadHandle GetHandle() { return handle_; }
 
 private:
 	virtual void ThreadMain() override;
 	void QuitMessageLoop();
 
-	ThreadHandle m_poHandle;
-	MessageLoop* m_poMessageLoop;
+	ThreadHandle handle_;
+	MessageLoop* message_loop_;
 
-	std::string m_strName;
+	std::string name_;
 
 	DISALLOW_COPY_AND_ASSIGN(MessageThread);
 };

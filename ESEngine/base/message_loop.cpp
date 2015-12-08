@@ -1,17 +1,17 @@
-#include "MessageLoop.h"
+#include "message_loop.h"
 
 #include <iostream>
 
 namespace base {
 
-MessageLoop::MessageLoop() : m_bQuit(false)
+MessageLoop::MessageLoop() : quit_(false)
 {
-	m_poIncomingTaskSemaphore = new Semaphore(0);
+	incoming_task_semaphore_ = new Semaphore(0);
 }
 
 MessageLoop::~MessageLoop()
 {
-	delete m_poIncomingTaskSemaphore;
+	delete incoming_task_semaphore_;
 }
 
 void MessageLoop::Run()
@@ -20,25 +20,25 @@ void MessageLoop::Run()
 	for (;;)
 	{
 		//Dequeing and doing task loop
-		if (m_oWorkQueue.empty())
+		if (work_queue_.empty())
 		{
 			//Reload Queue
 		}
 
-		if (!m_oWorkQueue.empty())
+		if (!work_queue_.empty())
 		{
-			std::function<void(void)> task = m_oWorkQueue.front();
+			std::function<void(void)> task = work_queue_.front();
 			task();
 		}
 
 
-		if (m_bQuit)
+		if (quit_)
 		{
 			break;
 		}
 
 		//Wait
-		m_poIncomingTaskSemaphore->Wait();
+		incoming_task_semaphore_->Wait();
 	}
 
 	std::cout << "MessageLoop::Run() - Thread Ended" << std::endl;
@@ -46,13 +46,13 @@ void MessageLoop::Run()
 
 void MessageLoop::Quit()
 {
-	m_bQuit = true;
+	quit_ = true;
 }
 
 void MessageLoop::PostTask(std::function<void(void)>& task)
 {
-	m_oWorkQueue.push(task);
-	m_poIncomingTaskSemaphore->Signal();
+	work_queue_.push(task);
+	incoming_task_semaphore_->Signal();
 }
 
 } //namespace base

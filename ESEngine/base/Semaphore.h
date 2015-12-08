@@ -16,7 +16,7 @@ public:
 	void Wait();
 
 private:
-	HANDLE m_poHandle;
+	HANDLE handle_;
 
 	DISALLOW_COPY_AND_ASSIGN(Semaphore);
 	

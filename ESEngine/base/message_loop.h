@@ -3,8 +3,8 @@
 
 #include <functional>
 
-#include "TaskQueue.h"
-#include "Semaphore.h"
+#include "task_queue.h"
+#include "semaphore.h"
 
 namespace base {
 
@@ -20,10 +20,10 @@ public:
 	void PostTask(std::function<void(void)>& task);
 
 private:
-	bool m_bQuit;
+	bool quit_;
 
-	TaskQueue m_oWorkQueue;
-	Semaphore* m_poIncomingTaskSemaphore;
+	TaskQueue work_queue_;
+	Semaphore* incoming_task_semaphore_;
 };
 
 } //namespace base

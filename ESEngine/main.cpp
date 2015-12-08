@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "base/MessageThread.h"
+#include "base/message_thread.h"
 
 int main(int argc, const char** argv)
 {

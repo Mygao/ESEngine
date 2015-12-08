@@ -119,19 +119,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="base\MessageLoop.cpp" />
-    <ClCompile Include="base\MessageThread.cpp" />
-    <ClCompile Include="base\Semaphore.cpp" />
-    <ClCompile Include="base\Thread.cpp" />
+    <ClCompile Include="base\lock.cpp" />
+    <ClCompile Include="base\message_loop.cpp" />
+    <ClCompile Include="base\message_thread.cpp" />
+    <ClCompile Include="base\semaphore.cpp" />
+    <ClCompile Include="base\thread.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="base\lock.h" />
     <ClInclude Include="base\macros.h" />
-    <ClInclude Include="base\MessageLoop.h" />
-    <ClInclude Include="base\MessageThread.h" />
-    <ClInclude Include="base\Semaphore.h" />
-    <ClInclude Include="base\TaskQueue.h" />
-    <ClInclude Include="base\Thread.h" />
+    <ClInclude Include="base\message_loop.h" />
+    <ClInclude Include="base\message_thread.h" />
+    <ClInclude Include="base\semaphore.h" />
+    <ClInclude Include="base\task_queue.h" />
+    <ClInclude Include="base\thread.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

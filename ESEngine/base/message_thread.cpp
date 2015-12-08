@@ -1,20 +1,20 @@
-#include "MessageThread.h"
+#include "message_thread.h"
 
 namespace base {
 
-MessageThread::MessageThread(const std::string& name) : m_strName(name), m_poHandle(0)
+MessageThread::MessageThread(const std::string& name) : name_(name), handle_(0)
 {
-	m_poMessageLoop = new MessageLoop;
+	message_loop_ = new MessageLoop;
 }
 
 MessageThread::~MessageThread()
 {
-	delete m_poMessageLoop;
+	delete message_loop_;
 }
 
 bool MessageThread::Start()
 {
-	Thread::Create(this, &m_poHandle);
+	Thread::Create(this, &handle_);
 
 	return true;
 }
@@ -22,18 +22,18 @@ bool MessageThread::Start()
 void MessageThread::Stop()
 {
 	std::function<void(void)> task = std::bind(&MessageThread::QuitMessageLoop, this);
-	m_poMessageLoop->PostTask(task);
-	Thread::Join(m_poHandle);
+	message_loop_->PostTask(task);
+	Thread::Join(handle_);
 }
 
 void MessageThread::ThreadMain()
 {
-	m_poMessageLoop->Run();
+	message_loop_->Run();
 }
 
 void MessageThread::QuitMessageLoop()
 {
-	m_poMessageLoop->Quit();
+	message_loop_->Quit();
 }
 
 } //namespace base

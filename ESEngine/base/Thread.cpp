@@ -1,4 +1,4 @@
-#include "Thread.h"
+#include "thread.h"
 
 #include <Windows.h>
 
@@ -8,15 +8,15 @@ namespace {
 
 struct ThreadParams
 {
-	Thread::Delegate* m_poDelegate;
+	Thread::Delegate* delegate;
 };
 
-DWORD __stdcall ThreadFunc(void* pParams)
+DWORD __stdcall ThreadFunc(void* in_params)
 {
-	ThreadParams* pLocalParams = static_cast<ThreadParams*>(pParams);
-	Thread::Delegate* pLocalDelegate = pLocalParams->m_poDelegate;
+	ThreadParams* params = static_cast<ThreadParams*>(in_params);
+	Thread::Delegate* pLocalDelegate = params->delegate;
 
-	delete pLocalParams;
+	delete params;
 
 	pLocalDelegate->ThreadMain();
 
@@ -25,35 +25,36 @@ DWORD __stdcall ThreadFunc(void* pParams)
 
 }
 
-bool Thread::Create(Delegate* poDelegate, ThreadHandle* pOutThreadHandle)
+bool Thread::Create(Delegate* delegate, ThreadHandle* out_handle)
 {
-	if (pOutThreadHandle == nullptr)
+	if (out_handle == nullptr)
 	{
 		return false;
 	}
 
-	ThreadParams* poParams = new ThreadParams;
+	ThreadParams* params = new ThreadParams;
 
-	poParams->m_poDelegate = poDelegate;
+	params->delegate = delegate;
 
-	ThreadHandle::Handle pThreadHandle = CreateThread(nullptr, 0, ThreadFunc, poParams, 0, nullptr);
+	ThreadHandle::Handle handle = 
+		CreateThread(nullptr, 0, ThreadFunc, params, 0, nullptr);
 
-	if (!pThreadHandle)
+	if (!handle)
 	{
-		delete poParams;
+		delete params;
 		return false;
 	}
 
-	*pOutThreadHandle = ThreadHandle(pThreadHandle);
+	*out_handle = ThreadHandle(handle);
 
 	return true;
 }
 
-void Thread::Join(ThreadHandle poHandle)
+void Thread::Join(ThreadHandle handle)
 {
-	WaitForSingleObject(poHandle.GetHandle(), INFINITE);
+	WaitForSingleObject(handle.GetHandle(), INFINITE);
 
-	CloseHandle(poHandle.GetHandle());
+	CloseHandle(handle.GetHandle());
 }
 
 } //namespace base

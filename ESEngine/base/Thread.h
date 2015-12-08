@@ -10,14 +10,14 @@ class ThreadHandle
 public:
 	typedef void* Handle;
 
-	ThreadHandle() : m_poHandle(0) {}
+	ThreadHandle() : handle_(0) {}
 
-	explicit ThreadHandle(Handle handle) : m_poHandle(handle) {}
+	explicit ThreadHandle(Handle handle) : handle_(handle) {}
 
-	Handle GetHandle() { return m_poHandle; }
+	Handle GetHandle() { return handle_; }
 
 private:
-	Handle m_poHandle;
+	Handle handle_;
 };
 
 class Thread
@@ -33,8 +33,8 @@ public:
 
 	};
 
-	static bool Create(Delegate* poDelegate, ThreadHandle* pOutThreadHandle);
-	static void Join(ThreadHandle poThreadHandle);
+	static bool Create(Delegate* delegate, ThreadHandle* out_handle);
+	static void Join(ThreadHandle handle);
 
 	DISALLOW_IMPLICIT_CONSTRUCTORS(Thread);
 };
