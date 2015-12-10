@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="리소스 파일">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Character\btCharacterControllerInterface.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Character\btKinematicCharacterController.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btConstraintSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btContactConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btContactSolverInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btFixedConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGearConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGeneric6DofSpring2Constraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btHinge2Constraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btHingeConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btJacobianEntry.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btNNCGConstraintSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSliderConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSolverBody.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSolverConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btTypedConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btUniversalConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btActionInterface.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btDynamicsWorld.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btRigidBody.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBody.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyConstraintSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyDynamicsWorld.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyJointFeedback.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyJointLimitConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyJointMotor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyLink.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyLinkCollider.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyPoint2Point.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodySolverConstraint.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btDantzigLCP.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btDantzigSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btLemkeAlgorithm.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btLemkeSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btMLCPSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btMLCPSolverInterface.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btPATHSolver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btSolveProjectedGaussSeidel.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Vehicle\btRaycastVehicle.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Vehicle\btVehicleRaycaster.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="..\PhysicsLibrary\BulletDynamics\Vehicle\btWheelInfo.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Vehicle\btRaycastVehicle.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Vehicle\btWheelInfo.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btDantzigLCP.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btLemkeAlgorithm.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\MLCPSolvers\btMLCPSolver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBody.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyConstraintSolver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyDynamicsWorld.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyJointLimitConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyJointMotor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Featherstone\btMultiBodyPoint2Point.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btRigidBody.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btContactConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btFixedConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGearConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGeneric6DofSpring2Constraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btNNCGConstraintSolver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PhysicsLibrary\BulletDynamics\Character\btKinematicCharacterController.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

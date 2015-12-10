@@ -1,17 +1,14 @@
 #include <iostream>
 
 #include "base/message_thread.h"
+#include "btBulletDynamicsCommon.h"
 
 int main(int argc, const char** argv)
 {
-	base::MessageThread oMessageThread("test");
+	btDefaultCollisionConfiguration* collisionConf =
+		new btDefaultCollisionConfiguration();
 
-	oMessageThread.Start();
-
-	char a;
-	std::cin >> a;
-
-	oMessageThread.Stop();
+	delete collisionConf;
 
 	return 0;
 }

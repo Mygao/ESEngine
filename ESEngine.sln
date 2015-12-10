@@ -4,6 +4,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ESEngine", "ESEngine\ESEngine.vcxproj", "{7C948C44-DAB1-48F1-B849-E5E80C1EAA33}"
+	ProjectSection(ProjectDependencies) = postProject
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C} = {81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10} = {1B742BE2-75E8-4836-BA88-B026F5AA6B10}
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25} = {B390CFEA-3DE1-4D71-95AF-1450A40CCD25}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletDynamics", "BulletDynamics\BulletDynamics.vcxproj", "{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletCollision", "BulletCollision\BulletCollision.vcxproj", "{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinearMath", "LinearMath\LinearMath.vcxproj", "{1B742BE2-75E8-4836-BA88-B026F5AA6B10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +32,30 @@ Global
 		{7C948C44-DAB1-48F1-B849-E5E80C1EAA33}.Release|x64.Build.0 = Release|x64
 		{7C948C44-DAB1-48F1-B849-E5E80C1EAA33}.Release|x86.ActiveCfg = Release|Win32
 		{7C948C44-DAB1-48F1-B849-E5E80C1EAA33}.Release|x86.Build.0 = Release|Win32
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Debug|x64.ActiveCfg = Debug|x64
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Debug|x64.Build.0 = Debug|x64
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Debug|x86.ActiveCfg = Debug|Win32
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Debug|x86.Build.0 = Debug|Win32
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Release|x64.ActiveCfg = Release|x64
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Release|x64.Build.0 = Release|x64
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Release|x86.ActiveCfg = Release|Win32
+		{81B1A047-16B5-41F3-B9F5-F4ECECC4A52C}.Release|x86.Build.0 = Release|Win32
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Debug|x64.ActiveCfg = Debug|x64
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Debug|x64.Build.0 = Debug|x64
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Debug|x86.ActiveCfg = Debug|Win32
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Debug|x86.Build.0 = Debug|Win32
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Release|x64.ActiveCfg = Release|x64
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Release|x64.Build.0 = Release|x64
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Release|x86.ActiveCfg = Release|Win32
+		{B390CFEA-3DE1-4D71-95AF-1450A40CCD25}.Release|x86.Build.0 = Release|Win32
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Debug|x64.ActiveCfg = Debug|x64
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Debug|x64.Build.0 = Debug|x64
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Debug|x86.ActiveCfg = Debug|Win32
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Debug|x86.Build.0 = Debug|Win32
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Release|x64.ActiveCfg = Release|x64
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Release|x64.Build.0 = Release|x64
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Release|x86.ActiveCfg = Release|Win32
+		{1B742BE2-75E8-4836-BA88-B026F5AA6B10}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
