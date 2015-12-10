@@ -23,4 +23,4 @@ void Semaphore::Wait()
 	WaitForSingleObject(handle_, INFINITE);
 }
 
-}
+} //namespace base

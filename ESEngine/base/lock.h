@@ -26,6 +26,25 @@ private:
 	DISALLOW_COPY_AND_ASSIGN(Lock);
 };
 
-}
+class AutoLock
+{
+public:
+	explicit AutoLock(Lock& lock) : lock_(lock)
+	{
+		lock_.Acquire();
+	}
+
+	~AutoLock()
+	{
+		lock_.Release();
+	}
+
+private:
+	Lock& lock_;
+
+	DISALLOW_COPY_AND_ASSIGN(AutoLock);
+};
+
+} //namespace base
 
 #endif

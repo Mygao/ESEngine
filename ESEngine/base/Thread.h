@@ -39,6 +39,6 @@ public:
 	DISALLOW_IMPLICIT_CONSTRUCTORS(Thread);
 };
 
-}
+} //namespace base
 
 #endif //BASE_THREAD_H_

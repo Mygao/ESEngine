@@ -32,4 +32,4 @@ bool Lock::Try()
 	return false;
 }
 
-}
+} //namespace base
