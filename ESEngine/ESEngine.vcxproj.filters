@@ -36,6 +36,9 @@
     <ClCompile Include="base\lock.cpp">
       <Filter>소스 파일\base</Filter>
     </ClCompile>
+    <ClCompile Include="physics_engine.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\lock.h">
@@ -58,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="base\thread.h">
       <Filter>소스 파일\base</Filter>
+    </ClInclude>
+    <ClInclude Include="physics_engine.h">
+      <Filter>소스 파일</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
