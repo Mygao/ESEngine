@@ -74,7 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\PhysicsLibrary\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\PhysicsLibrary\;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -99,7 +99,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\PhysicsLibrary\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\PhysicsLibrary\;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -129,6 +129,7 @@
     <ClCompile Include="base\thread.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="physics_engine.cpp" />
+    <ClCompile Include="ui\win_window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="base\lock.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="base\task_queue.h" />
     <ClInclude Include="base\thread.h" />
     <ClInclude Include="physics_engine.h" />
+    <ClInclude Include="ui\win_window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

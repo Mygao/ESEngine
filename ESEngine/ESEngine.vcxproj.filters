@@ -16,6 +16,9 @@
     <Filter Include="소스 파일\base">
       <UniqueIdentifier>{0ad6091f-69b8-4e67-83fc-54b967a98933}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\ui">
+      <UniqueIdentifier>{77862687-54fe-4572-b830-d418e59e3155}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -38,6 +41,9 @@
     </ClCompile>
     <ClCompile Include="physics_engine.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ui\win_window.cpp">
+      <Filter>소스 파일\ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="physics_engine.h">
       <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\win_window.h">
+      <Filter>소스 파일\ui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
