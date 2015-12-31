@@ -3,7 +3,7 @@
 namespace ui {
 
 WinWindow::WinWindow()
-	: hwnd_(NULL)
+	: hwnd_(NULL), msg_thread_(0)
 {
 
 }
@@ -15,6 +15,18 @@ WinWindow::~WinWindow()
 
 void WinWindow::Create(CreateParams* params)
 {
+	msg_thread_ = new std::thread(&WinWindow::ThreadMain, this, params);
+}
+
+void WinWindow::Destroy()
+{
+	msg_thread_->join();
+	DestroyWindow(hwnd_);
+}
+
+void WinWindow::ThreadMain(void* arg)
+{
+	CreateParams* params = static_cast<CreateParams*>(arg);
 	const char* class_name = "DeviceWin32";
 
 	HINSTANCE h_instance = GetModuleHandle(0);
@@ -37,7 +49,7 @@ void WinWindow::Create(CreateParams* params)
 	BOOL register_result = RegisterClassEx(&wnd_class);
 
 	DWORD style = WS_OVERLAPPEDWINDOW;
-	
+
 	int x, y, width, height;
 
 	x = params->bound.left;
@@ -47,7 +59,7 @@ void WinWindow::Create(CreateParams* params)
 
 
 	hwnd_ = ::CreateWindow(class_name, "", style, x, y, width, height,
-						   NULL, NULL, h_instance, NULL);
+		NULL, NULL, h_instance, NULL);
 
 	if (!hwnd_)
 	{
@@ -56,11 +68,24 @@ void WinWindow::Create(CreateParams* params)
 
 	ShowWindow(hwnd_, SW_SHOW);
 	UpdateWindow(hwnd_);
-}
+	MSG msg;
+	BOOL outer_loop = TRUE;
 
-void WinWindow::Destroy()
-{
-	DestroyWindow(hwnd_);
+	while (outer_loop)
+	{
+		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE) != 0)
+		{
+			if (msg.message == WM_QUIT)
+			{
+				outer_loop = FALSE;
+			}
+			else
+			{
+				TranslateMessage(&msg);
+				DispatchMessage(&msg);
+			}
+		}
+	}
 }
 
 //static

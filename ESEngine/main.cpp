@@ -23,29 +23,12 @@ int main(int argc, const char** argv)
 
 	oWnd.Create(&params);
 
-	BOOL fGotMessage = TRUE;
-	MSG msg;
-	while (fGotMessage)
-	{
-		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
-		{
-			if (msg.message == WM_QUIT) 
-			{
-				fGotMessage = FALSE;
-			}
-			else
-			{
-				TranslateMessage(&msg);
-				DispatchMessage(&msg);
-			}
-		}
-	}
-
-	std::cout << "Msg Loop Ended." << std::endl;
+	std::cout << "Wait For Input." << std::endl;
 	char a;
 	std::cin >> a;
 
 	oWnd.Destroy();
+	std::cout << "Window Destroyed." << std::endl;
 
 	return 0;
 }
