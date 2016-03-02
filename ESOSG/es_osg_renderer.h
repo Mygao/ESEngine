@@ -33,6 +33,9 @@ public:
 	bool Render();
 
 private:
+	void AddHUD();
+
+	osg::ref_ptr<osg::Group> _root;
 	osg::ref_ptr<osgViewer::Viewer> _viewer;
 	class RenderingThread;
 	RenderingThread* _rendering_thread;
