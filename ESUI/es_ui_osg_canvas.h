@@ -16,11 +16,19 @@ public:
 	
 	virtual ~ESUIOSGCanvas();
 	
+	void SetGraphicsWindow(osgViewer::GraphicsWindow* gw);
+
 	DECLARE_EVENT_TABLE()
 
 	void OnPaint(wxPaintEvent& event);
 	void OnSize(wxSizeEvent& event);
 	void OnEraseBackground(wxEraseEvent& event);
+
+	void OnMouseEnter(wxMouseEvent& event);
+	void OnMouseDown(wxMouseEvent& event);
+	void OnMouseUp(wxMouseEvent& event);
+	void OnMouseMotion(wxMouseEvent& event);
+	void OnMouseWheel(wxMouseEvent& event);
 
 	//RenderingCanvas impl
 	virtual void grabFocus();

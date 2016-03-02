@@ -1,5 +1,11 @@
 #include "es_osg_renderer.h"
 
+#include <osg/Group>
+#include <osg/ShapeDrawable>
+#include <osg/PolygonMode>
+#include <osgViewer/ViewerEventHandlers>
+#include <osgGA/TrackballManipulator>
+
 class GraphicsWindowWX : public osgViewer::GraphicsWindow
 {
 public:
@@ -98,6 +104,7 @@ ESOSGRenderer::~ESOSGRenderer()
 {
 	if (_rendering_thread)
 	{
+		_viewer->setDone(true);
 		_rendering_thread->cancel();
 		_rendering_thread->join();
 	}
@@ -110,13 +117,37 @@ void ESOSGRenderer::Init(RenderingCanvas& canvas)
 	_viewer = new osgViewer::Viewer();
 	
 	GraphicsWindowWX* gw = new GraphicsWindowWX(canvas);
+	canvas.SetGraphicsWindow(gw);
+
 	osg::Camera* camera = _viewer->getCamera();
 
 	camera->setGraphicsContext(gw);
 
 	camera->setViewport(new osg::Viewport(0, 0, canvas.getSizeX(), canvas.getSizeY()));
-	camera->setClearColor(osg::Vec4((255.0 / 255.0), (0.0 / 255.0), (255.0 / 255.0), 1.0));
+	camera->setClearColor(osg::Vec4((40.0 / 255.0), (40.0 / 255.0), (40.0 / 255.0), 1.0));
 	camera->setClearMask(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	camera->setViewMatrixAsLookAt(osg::Vec3(0.0, 10.0, 0.0), osg::Vec3(0.0, 0.0, 0.0), osg::Vec3(0.0, 0.0, 1.0));
+
+	osg::Group* root = new osg::Group();
+
+	osg::Box* unitCube = new osg::Box(osg::Vec3(0, 0, 0), 1.0f);
+
+	osg::ShapeDrawable* unitCubeDrawable = new osg::ShapeDrawable(unitCube);
+	unitCubeDrawable->setColor(osg::Vec4(255.0, 255.0, 255.0, 0.5));
+	osg::Geode* basicShapesGeode = new osg::Geode();
+
+	basicShapesGeode->addDrawable(unitCubeDrawable);
+
+	root->addChild(basicShapesGeode);
+
+	osg::ref_ptr<osg::StateSet> stateset = _viewer->getCamera()->getOrCreateStateSet();
+	osg::ref_ptr<osg::PolygonMode> pm = new osg::PolygonMode;
+	pm->setMode(osg::PolygonMode::FRONT_AND_BACK, (osg::PolygonMode::Mode)osg::PolygonMode::FILL);
+	stateset->setAttribute(pm.get());
+
+	_viewer->setSceneData(root);
+	_viewer->addEventHandler(new osgViewer::StatsHandler);
+	_viewer->setCameraManipulator(new osgGA::TrackballManipulator);
 }
 
 void ESOSGRenderer::Start()

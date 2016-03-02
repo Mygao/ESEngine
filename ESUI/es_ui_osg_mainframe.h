@@ -1,7 +1,7 @@
 #ifndef ES_UI_OSG_MAINFRAME_H_
 #define ES_UI_OSG_MAINFRAME_H_
 
-#include <wx/frame.h>
+#include <wx/wx.h>
 
 class ESUIOSGMainFrame : public wxFrame
 {
@@ -11,11 +11,11 @@ public:
 		long style = wxDEFAULT_FRAME_STYLE);
 	~ESUIOSGMainFrame();
 
-	//void SetViewer(osgViewer::Viewer *viewer);
 	void OnIdle(wxIdleEvent& event);
 
 private:
-	//osg::ref_prt<osgViewer::Viewer> _viewer;
+	void OnExit(wxCommandEvent& event);
+	void OnAbout(wxCommandEvent& event);
 
 	DECLARE_EVENT_TABLE()
 };

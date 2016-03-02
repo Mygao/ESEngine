@@ -6,6 +6,8 @@
 class RenderingCanvas
 {
 public:
+	virtual void SetGraphicsWindow(osgViewer::GraphicsWindow* gw) = 0;
+
 	virtual void grabFocus() = 0;
 	virtual void grabFocusIfPointerInWindow() = 0;
 	virtual void useCursor(bool bOn) = 0;

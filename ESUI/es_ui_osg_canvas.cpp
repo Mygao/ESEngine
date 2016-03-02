@@ -17,9 +17,23 @@ ESUIOSGCanvas::~ESUIOSGCanvas()
 	delete _renderer;
 }
 
+void ESUIOSGCanvas::SetGraphicsWindow(osgViewer::GraphicsWindow* gw)
+{
+	_graphics_window = gw;
+}
+
 BEGIN_EVENT_TABLE(ESUIOSGCanvas, wxGLCanvas)
-EVT_SIZE(ESUIOSGCanvas::OnSize)
-EVT_PAINT(ESUIOSGCanvas::OnPaint)
+	EVT_SIZE(ESUIOSGCanvas::OnSize)
+	EVT_PAINT(ESUIOSGCanvas::OnPaint)
+	EVT_ENTER_WINDOW(ESUIOSGCanvas::OnMouseEnter)
+	EVT_LEFT_DOWN(ESUIOSGCanvas::OnMouseDown)
+	EVT_MIDDLE_DOWN(ESUIOSGCanvas::OnMouseDown)
+	EVT_RIGHT_DOWN(ESUIOSGCanvas::OnMouseDown)
+	EVT_LEFT_UP(ESUIOSGCanvas::OnMouseUp)
+	EVT_MIDDLE_UP(ESUIOSGCanvas::OnMouseUp)
+	EVT_RIGHT_UP(ESUIOSGCanvas::OnMouseUp)
+	EVT_MOTION(ESUIOSGCanvas::OnMouseMotion)
+	EVT_MOUSEWHEEL(ESUIOSGCanvas::OnMouseWheel)
 END_EVENT_TABLE()
 
 void ESUIOSGCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
@@ -47,6 +61,48 @@ void ESUIOSGCanvas::OnSize(wxSizeEvent& event)
 void ESUIOSGCanvas::OnEraseBackground(wxEraseEvent& event)
 {
 
+}
+
+void ESUIOSGCanvas::OnMouseEnter(wxMouseEvent& event)
+{
+	SetFocus();
+}
+
+void ESUIOSGCanvas::OnMouseDown(wxMouseEvent& event)
+{
+	if (_graphics_window.valid())
+	{
+		_graphics_window->getEventQueue()
+			->mouseButtonPress(event.GetX(), event.GetY(), event.GetButton());
+	}
+}
+
+void ESUIOSGCanvas::OnMouseUp(wxMouseEvent& event)
+{
+	if (_graphics_window.valid())
+	{
+		_graphics_window->getEventQueue()
+			->mouseButtonRelease(event.GetX(), event.GetY(), event.GetButton());
+	}
+}
+
+void ESUIOSGCanvas::OnMouseMotion(wxMouseEvent& event)
+{
+	if (_graphics_window.valid())
+	{
+		_graphics_window->getEventQueue()->mouseMotion(event.GetX(), event.GetY());
+	}
+}
+
+void ESUIOSGCanvas::OnMouseWheel(wxMouseEvent& event)
+{
+	int delta = event.GetWheelRotation() / event.GetWheelDelta() * event.GetLinesPerAction();
+
+	if (_graphics_window.valid())
+	{
+		_graphics_window->getEventQueue()->mouseScroll(
+			delta > 0 ? osgGA::GUIEventAdapter::SCROLL_DOWN : osgGA::GUIEventAdapter::SCROLL_UP);
+	}
 }
 
 //RenderingCanvas impl
